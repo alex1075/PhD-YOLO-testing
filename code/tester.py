@@ -6,6 +6,9 @@ from ai_benchmark import AIBenchmark
 def tf_test():
  tf.test.gpu_device_name(),
  tf.config.list_physical_devices("GPU"),
+#  details = tf.config.experimental.get_device_details()
+#  details.get('device_name', 'Unknown GPU')
+ tf.config.experimental.get_device_policy(), 
  print(tf.test.is_built_with_cuda()),
  return
 
