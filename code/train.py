@@ -4,7 +4,7 @@ from yolov4.tf import YOLOv4, YOLODataset, SaveWeightsCallback
 
 yolo = YOLOv4()
 
-yolo.config.parse_names("data.names")
+yolo.config.parse_names("train/classes.txt")
 yolo.config.parse_cfg("yolov4-tiny.cfg")
 
 yolo.make_model()
@@ -21,15 +21,15 @@ yolo.summary()
 
 train_dataset = YOLODataset(
     config=yolo.config,
-    dataset_list="train/labels/train/",
-    image_path_prefix="train/images/train/",
+    dataset_list="/Volumes/PhD/PhD-YOLO/train/annotations.txt",
+    image_path_prefix="/Volumes/PhD/PhD-YOLO/train/",
     training=True,
 )
 
 val_dataset = YOLODataset(
     config=yolo.config,
-    dataset_list="./data/val.txt",
-    image_path_prefix="/data/val",
+    dataset_list="./valid.txt",
+    image_path_prefix="/data/valid",
     training=False,
 )
 

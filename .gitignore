@@ -3,3 +3,6 @@
 data/*
 valid
 train
+train.txt
+valid.txt
+test
