@@ -9,7 +9,7 @@ yolo.config.parse_cfg("yolov4-tiny-newcord.cfg")
 
 yolo.make_model()
 yolo.load_weights(
-    "./yolov4-tiny.conv.29",
+    "./yolov4x-mish.weights",
     weights_type="yolo",
 )
 yolo.summary(summary_type="yolo")
