@@ -6,3 +6,6 @@ train
 train.txt
 valid.txt
 test
+*.weights
+*.29
+*.137
