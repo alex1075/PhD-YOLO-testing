@@ -5,7 +5,7 @@ from yolov4.tf import YOLOv4, YOLODataset, SaveWeightsCallback
 yolo = YOLOv4()
 
 yolo.config.parse_names("train/classes.txt")
-yolo.config.parse_cfg("yolov4-tiny.cfg")
+yolo.config.parse_cfg("yolov4-tiny-newcord.cfg")
 
 yolo.make_model()
 yolo.load_weights(
