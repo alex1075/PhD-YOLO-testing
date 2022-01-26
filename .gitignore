@@ -9,3 +9,5 @@ test
 *.weights
 *.29
 *.137
+logs/*
+trained/*
