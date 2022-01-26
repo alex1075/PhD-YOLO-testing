@@ -18,3 +18,5 @@ def benchmark(use_CPU=None, verbose_level=3):
   # results = benchmark.run(precision="high")
   result = benchmark.run()
 
+if __name__ == "__main__":
+  tf_test()
