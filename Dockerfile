@@ -5,7 +5,11 @@ RUN pip3 install --upgrade pip
 RUN pip3 install --upgrade setuptools
 RUN pip3 install --upgrade wheel
 RUN apt install git curl wget -y
-RUN pip install tensorflow-macos==2.70  # for macOS
-RUN pip install tensorflow-metal==0.3.0
-COPY * /code
-RUN cd /code && python3 -m pip install -r requirements.txt
+RUN python3 -m pip install --upgrade https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-0.12.0-py3-none-any.whl
+COPY code/ /home/
+COPY requirements.txt home/
+COPY yolo* /home/
+COPY data.names /home/
+RUN mkdir /home/data
+RUN cd /home && python3 -m pip install -r requirements.txt
+CMD ["bash"]
