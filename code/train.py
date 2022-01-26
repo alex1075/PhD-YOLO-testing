@@ -5,11 +5,11 @@ from yolov4.tf import YOLOv4, YOLODataset, SaveWeightsCallback
 yolo = YOLOv4()
 
 yolo.config.parse_names("train/classes.txt")
-yolo.config.parse_cfg("yolov4-tiny-newcord.cfg")
+yolo.config.parse_cfg("yolov4-tiny.cfg")
 
 yolo.make_model()
 yolo.load_weights(
-    "./yolov4x-mish.weights",
+    "./yolov4-tiny.conv.29",
     weights_type="yolo",
 )
 yolo.summary(summary_type="yolo")
