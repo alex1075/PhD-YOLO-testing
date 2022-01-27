@@ -1,4 +1,4 @@
-FROM tensorflow/tensorflow:latest-gpu
+FROM alex1075/phd:tf-arm64
 RUN apt update && apt upgrade -y
 RUN apt install -y python3 python3-pip python3-dev python3-opencv
 RUN apt install ffmpeg libsm6 libxext6  -y
