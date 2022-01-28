@@ -17,4 +17,4 @@ WORKDIR /home
 RUN python3 -m pip install -r requirements.txt
 RUN chmod +x train.sh
 EXPOSE 6006
-ENTRYPOINT ["tensorboard --logdir=/home/data/logs --port=6006 --bind_all"]
+RUN ["tensorboard --logdir=/home/data/logs --port=6006 --bind_all"]
