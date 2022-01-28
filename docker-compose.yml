@@ -1,7 +1,14 @@
 version: "3.7"
 services:
   PhD-YOLO:
-    build: .
+    image: alex1075/phd:latest
     volumes:
      - ./data:/data
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
     restart: always
