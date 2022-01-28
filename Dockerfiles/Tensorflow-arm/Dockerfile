@@ -9,6 +9,7 @@ RUN apt install git curl wget -y
 # RUN python3 -m pip install --upgrade https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-0.12.0-py3-none-any.whl
 COPY code/ /home/
 COPY requirements.txt home/
+COPY train.sh /home/
 COPY yolo* /home/
 COPY data.names /home/
 RUN mkdir /home/data
