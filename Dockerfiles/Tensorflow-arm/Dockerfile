@@ -16,5 +16,5 @@ RUN mkdir /home/data
 WORKDIR /home
 RUN python3 -m pip install -r requirements.txt
 RUN chmod +x train.sh
-CMD ["bash"]
+CMD ["CMD"]
 
