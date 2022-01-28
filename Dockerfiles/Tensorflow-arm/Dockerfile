@@ -13,7 +13,8 @@ COPY train.sh /home/
 COPY yolo* /home/
 COPY data.names /home/
 RUN mkdir /home/data
-RUN cd /home && python3 -m pip install -r requirements.txt
+WORKDIR /home
+RUN python3 -m pip install -r requirements.txt
 RUN chmod +x train.sh
 CMD ["./train.sh"]
 
