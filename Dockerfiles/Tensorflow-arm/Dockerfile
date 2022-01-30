@@ -17,5 +17,8 @@ WORKDIR /home
 RUN python3 -m pip install -r requirements.txt
 RUN chmod +x train.sh
 EXPOSE 6006
+RUN rm -rf ~/.cache/pip
+RUN apt-get autoclean && apt-get clean \
+        && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 CMD ["./train.sh"]
 
