@@ -20,5 +20,5 @@ EXPOSE 6006
 RUN rm -rf ~/.cache/pip
 RUN apt-get autoclean && apt-get clean \
         && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-CMD ["./train.sh"]
+ENTRYPOINT python /home/train.py
 

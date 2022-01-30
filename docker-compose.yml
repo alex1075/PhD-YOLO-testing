@@ -12,3 +12,12 @@ services:
               count: 1
               capabilities: [gpu]
     restart: always
+    depends_on:
+      - phd-tensorboard
+  PhD-tensorboard:
+    image: alex1075/phd:tensorboard
+    volumes:
+     - ./data:/data
+    restart: aleways
+    ports:
+      - 6006:6006   
