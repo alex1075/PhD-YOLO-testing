@@ -5,12 +5,12 @@ PS3='Select building os architechture: '
 option=("arm64" "amd64" "Quit")
 select fav in "${option[@]}"; do
     case $fav in
-        "arm64")
+        "amd64")
             echo "Building dockerfile for arm64"
             docker build . -t alex1075/phd:latest -f Dockerfiles/Tensorflow/Dockerfile && docker build . -t alex1075/phd:latest-gpu -f Dockerfiles/Tensorflow-GPU/Dockerfile 
             docker push alex1075/phd:latest && docker push alex1075/phd:latest-gpu
             ;;
-        "amd64")
+        "arm64")
             echo "Building dockerfile for amd64"
             docker build . -t alex1075/phd:latest-arm -f Dockerfiles/Tensorflow-arm/Dockerfile
             docker push alex1075/phd:latest-arm
