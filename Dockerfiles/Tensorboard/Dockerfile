@@ -8,4 +8,4 @@ RUN pip3 install tensorboard
 RUN rm -rf ~/.cache/pip
 RUN apt-get autoclean && apt-get clean \
         && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-ENTRYPOINT tensorboad --logdir=/home/data/logs --port=6006 --bind_all
+ENTRYPOINT tensorboad --logdir=/data/logs --port=6006 --bind_all

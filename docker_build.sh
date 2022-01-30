@@ -22,7 +22,8 @@ select fav in "${option[@]}"; do
             ;;
         "tensorboard")
             echo "Building dockerfile for tensorboard agnostic"
-            docker build . -t alex1075/phd:tensorboard -f Dockerfiles/Tensorboard/Dockerfile
+            docker build . -t alex1075/phd:tensorboard -f Dockerfiles/Tensorboard/Dockerfile --platform linux/amd64 
+            docker build . -t alex1075/phd:tensorboard -f Dockerfiles/Tensorboard/Dockerfile --platform linux/arm64 
             docker push alex1075/phd:tensorboard
             ;;
         "tf-arm")

@@ -21,15 +21,15 @@ yolo.summary()
 
 train_dataset = YOLODataset(
     config=yolo.config,
-    dataset_list="/home/data/train/train.txt",
-    image_path_prefix="/home/train/",
+    dataset_list="/data/train/train.txt",
+    image_path_prefix="/data/train/",
     training=True,
 )
 
 val_dataset = YOLODataset(
     config=yolo.config,
-    dataset_list="/home/data/valid/valid.txt",
-    image_path_prefix="/home/valid",
+    dataset_list="/data/valid/valid.txt",
+    image_path_prefix="/data/valid",
     training=False,
 )
 
@@ -38,13 +38,13 @@ yolo.compile()
 _callbacks = [
     callbacks.TerminateOnNaN(),
     callbacks.TensorBoard(
-        log_dir="/home/data/logs",
+        log_dir="/data/logs",
         update_freq=200,
         histogram_freq=1,
     ),
     SaveWeightsCallback(
         yolo=yolo,
-        dir_path="/home/data/trained",
+        dir_path="/data/trained",
         weights_type="yolo",
         step_per_save=2000,
     ),
