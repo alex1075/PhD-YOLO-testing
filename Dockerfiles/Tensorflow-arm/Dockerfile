@@ -17,5 +17,5 @@ WORKDIR /home
 RUN python3 -m pip install -r requirements.txt
 RUN chmod +x train.sh
 EXPOSE 6006
-CMD ["python train.py"]
+CMD ["./train.sh"]
 
